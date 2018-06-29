@@ -86,7 +86,7 @@ class ZoomPan extends Component {
             }}
             >
             <ZoomableGroup center={this.state.center} zoom={this.state.zoom}>
-              <Geographies geography="/static/world-50m.json">
+              <Geographies geography="/world-50m.json">
                 {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
                   <Geography
                     key={i}
