@@ -1,0 +1,1190 @@
+[
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "ALD",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "CNM",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "CYN",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "ESB",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "KAB",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "KAS",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "XKX",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "PSX",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "SOL",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "USG",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  },
+  {
+    "name": {
+      "common": "Taiwan",
+      "official": "Republic of China (Taiwan)",
+      "native": {
+        "zho": {
+          "official": "中華民國",
+          "common": "台灣"
+        }
+      }
+    },
+    "tld": [
+      ".tw",
+      ".台灣",
+      ".台湾"
+    ],
+    "cca2": "TW",
+    "ccn3": "158",
+    "cca3": "WSB",
+    "cioc": "TPE",
+    "independent": false,
+    "status": "officially-assigned",
+    "currency": [
+      "TWD"
+    ],
+    "callingCode": [
+      "886"
+    ],
+    "capital": [
+      "Taipei"
+    ],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "languages": {
+      "zho": "Chinese"
+    },
+    "translations": {
+      "ces": {
+        "official": "Čínská republika",
+        "common": "Tchaj-wan"
+      },
+      "deu": {
+        "official": "Republik China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "fra": {
+        "official": "République de Chine (Taïwan)",
+        "common": "Taïwan"
+      },
+      "hrv": {
+        "official": "Republika Kina",
+        "common": "Tajvan"
+      },
+      "ita": {
+        "official": "Repubblica cinese (Taiwan)",
+        "common": "Taiwan"
+      },
+      "jpn": {
+        "official": "中華民国",
+        "common": "台湾"
+      },
+      "nld": {
+        "official": "Republiek China (Taiwan)",
+        "common": "Taiwan"
+      },
+      "por": {
+        "official": "República da China",
+        "common": "Ilha Formosa"
+      },
+      "rus": {
+        "official": "Китайская Республика",
+        "common": "Тайвань"
+      },
+      "slk": {
+        "official": "Čínska republika",
+        "common": "Taiwan"
+      },
+      "spa": {
+        "official": "República de China en Taiwán",
+        "common": "Taiwán"
+      },
+      "fin": {
+        "official": "Kiinan tasavalta",
+        "common": "Taiwan"
+      },
+      "est": {
+        "official": "Taiwani",
+        "common": "Taiwan"
+      }
+    },
+    "latlng": [
+      23.5,
+      121
+    ],
+    "demonym": "Taiwanese",
+    "landlocked": false,
+    "borders": [],
+    "area": 36193,
+    "flag": "🇹🇼"
+  }
+]

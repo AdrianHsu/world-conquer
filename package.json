@@ -1,5 +1,5 @@
 {
-  "name": "youtube-music-blogger",
+  "name": "webpack-conquer",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --watch --mode development",
     "build": "webpack -p",
-    "start": "./node_modules/.bin/babel server.js && nodemon server.js"
+    "start": "./node_modules/.bin/babel server.js && nodemon server.js",
+    "data": "./node_modules/.bin/babel data_server.js && nodemon data_server.js"
   },
   "repository": {
     "type": "git",
