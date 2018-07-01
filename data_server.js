@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname ,'public')));
 
 var data = []
 var ids = []
-var obj = JSON.parse(fs.readFileSync('./data_new.json', 'utf8'));
+var obj = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
 for(var i = 0; i < obj.length; i++) {
   ids.push(obj[i]['cca3'])
   var flag = obj[i]['flag']
