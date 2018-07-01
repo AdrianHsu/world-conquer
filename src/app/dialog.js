@@ -21,6 +21,7 @@ import blue from '@material-ui/core/colors/blue';
 import CardMedia from '@material-ui/core/CardMedia';
 import InsetListItem from './InsetListItem.js';
 import { Grid } from '@material-ui/core';
+import SimpleListMenu from './menu.js';
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 const styles = {
@@ -38,7 +39,10 @@ class SimpleDialog extends React.Component {
   handleListItemClick = value => {
     this.props.onClose(value);
   };
-
+  statuscallback = index => {
+    console.log('dialog:', index);
+    this.props.statuscallback(index);
+  }
   fetchListItems = () => {
     return (
       <div>
@@ -83,10 +87,10 @@ class SimpleDialog extends React.Component {
           <DialogTitle id="alert-dialog-title">{this.props.geo.name}</DialogTitle>
           
           <DialogContent>
-
                 <List>
                     {listItems}
                 </List>
+                <SimpleListMenu statuscallback={this.statuscallback}/>
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">

@@ -144,26 +144,7 @@ const DefaultGeo2 =  {
     "id": "TWN"
 }
 
-const countryStyles = {
-    default: {
-      fill: "#ECEFF1",
-      stroke: "#607D8B",
-      strokeWidth: 0.75,
-      outline: "none",
-    },
-    hover: {
-      fill: "#607D8B",
-      stroke: "#607D8B",
-      strokeWidth: 0.75,
-      outline: "none",
-    },
-    pressed: {
-      fill: "#FF5722",
-      stroke: "#607D8B",
-      strokeWidth: 0.75,
-      outline: "none",
-    },
-}
+const mapColors= ['#FF0000', '#FFA500', '#FFFF00', '#7CFC00', 'ECEFF1']; //Red, Orange, Yellow, Green, Default
 
 
 class ZoomPan extends Component {
@@ -188,6 +169,8 @@ class ZoomPan extends Component {
       open:false,
       selectedValue: DefaultGeo2.name,
       geo: DefaultGeo2,
+      color: mapColors[3],
+      changeColor: false,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
@@ -215,6 +198,7 @@ class ZoomPan extends Component {
             geo: response.data, 
             selectedValue: response.data.name,
             open: true,
+            changeColor: true,
           });
         } 
       })
@@ -240,6 +224,13 @@ class ZoomPan extends Component {
     this.setState({
       center: [0,20],
       zoom: 1,
+    })
+  }
+  statuscallback = index => {
+    console.log('map:', index);
+    this.setState({
+      color: mapColors[index],
+      changeColor: false,
     })
   }
   render() {
@@ -270,6 +261,7 @@ class ZoomPan extends Component {
           open={this.state.open}
           onClose={this.handleClose}
           geo = {this.state.geo}
+          statuscallback = {this.statuscallback}
         />
         </div>
         <div style={wrapperStyles}>
@@ -282,6 +274,7 @@ class ZoomPan extends Component {
             style={{
               width: "100%",
               height: "auto",
+              left: 0,
             }}
             >
             <ZoomableGroup center={this.state.center} zoom={this.state.zoom}>
@@ -292,8 +285,28 @@ class ZoomPan extends Component {
                     onClick = {() => this.handleClickOpen(geography)}
                     geography={geography}
                     projection={projection}
-                    style={countryStyles}
+                    style={{
+                        default: {
+                          fill: this.state.changeColor? 'EC2FF1': 'E0CF00',
+                          stroke: "#607D8B",
+                          strokeWidth: 0.75,
+                          outline: "none",
+                        },
+                        hover: {
+                          fill: "#607D8B",
+                          stroke: "#607D8B",
+                          strokeWidth: 0.75,
+                          outline: "none",
+                        },
+                        pressed: {
+                          fill: "#FF5722",
+                          stroke: "#607D8B",
+                          strokeWidth: 0.75,
+                          outline: "none",
+                        },
+                    }}
                   />
+                  
                 ) )}
               </Geographies>              
               <Markers>
