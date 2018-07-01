@@ -1,116 +1,53 @@
-/* eslint-disable react/no-multi-comp */
-
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import PersonIcon from '@material-ui/icons/Person';
-import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
-import blue from '@material-ui/core/colors/blue';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
-const styles = {
-  avatar: {
-    backgroundColor: blue[100],
-    color: blue[600],
-  },
-};
-
-class SimpleDialog extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      geo: this.props.geo,
-    }
-  }
-  handleClose = () => {
-    this.props.onClose(this.props.selectedValue);
+class AlertDialog extends React.Component {
+  state = {
+    open: false,
   };
 
-  handleListItemClick = value => {
-    this.props.onClose(value);
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
   };
 
   render() {
-    const { classes, onClose, selectedValue, ...other } = this.props;
-
     return (
-      <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
-        <DialogTitle id="simple-dialog-title">{this.props.geo.properties.name}</DialogTitle>
-        <div>
-          <List>
-            {emails.map(email => (
-              <ListItem button onClick={() => this.handleListItemClick(email)} key={email}>
-                <ListItemAvatar>
-                  <Avatar className={classes.avatar}>
-                    <PersonIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary={email} />
-              </ListItem>
-            ))}
-            <ListItem button onClick={() => this.handleListItemClick('addAccount')}>
-              <ListItemAvatar>
-                <Avatar>
-                  <AddIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary={this.props.geo.properties.name} />
-            </ListItem>
-          </List>
-        </div>
-      </Dialog>
+      <div>
+        <Button onClick={this.handleClickOpen}>Open alert dialog</Button>
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Let Google help apps determine location. This means sending anonymous location data to
+              Google, even when no apps are running.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              {this.props.geo.properties.name}
+            </Button>
+            <Button onClick={this.handleClose} color="primary" autoFocus>
+              Agree
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
     );
   }
 }
 
-SimpleDialog.propTypes = {
-  classes: PropTypes.object.isRequired,
-  onClose: PropTypes.func,
-  selectedValue: PropTypes.string,
-};
-
-const SimpleDialogWrapped = withStyles(styles)(SimpleDialog);
-export default SimpleDialogWrapped;
-
-
-// class SimpleDialogDemo extends React.Component {
-//   state = {
-//     open: false,
-//     selectedValue: emails[1],
-//   };
-
-//   handleClickOpen = () => {
-//     this.setState({
-//       open: true,
-//     });
-//   };
-
-//   handleClose = value => {
-//     this.setState({ selectedValue: value, open: false });
-//   };
-
-//   render() {
-//     return (
-//       <div>
-//         <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography>
-//         <br />
-//         <Button onClick={this.handleClickOpen}>Open simple dialog</Button>
-//         <SimpleDialogWrapped
-//           selectedValue={this.state.selectedValue}
-//           open={this.state.open}
-//           onClose={this.handleClose}
-//         />
-//       </div>
-//     );
-//   }
-// }
-
+export default AlertDialog;

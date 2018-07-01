@@ -1,5 +1,5 @@
 {
-  "name": "youtube-music-blogger",
+  "name": "world-conquer",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AdrianHsu/youtube-music-blogger.git"
+    "url": "git+https://github.com/AdrianHsu/world-conquer.git"
   },
   "author": "AdrianHsu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AdrianHsu/youtube-music-blogger/issues"
+    "url": "https://github.com/AdrianHsu/world-conquer/issues"
   },
-  "homepage": "https://github.com/AdrianHsu/youtube-music-blogger#readme",
+  "homepage": "https://github.com/AdrianHsu/world-conquer#readme",
   "dependencies": {
     "@babel/cli": "^7.0.0-beta.47",
     "@babel/core": "^7.0.0-beta.47",
