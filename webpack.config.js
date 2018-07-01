@@ -8,7 +8,7 @@ var config = {
   entry: {
     // login: APP_DIR + '/index_login.js',
     // signup: APP_DIR + '/index_signup.js',
-    blog: APP_DIR + '/index_blog.js',
+    blog: APP_DIR + '/index.js',
   }, 
   output: {
     path: BUILD_DIR,

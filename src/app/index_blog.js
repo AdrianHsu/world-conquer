@@ -4,20 +4,11 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-// import PaperSheet from './Papersheet.js';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import ZoomPan from './map.js';
 import TEST from './test.js';
 
-class World extends React.Component {
-  render() {
-      return(
-          <p>hello world</p>
-      );
-  }
-}
-
-
-class App extends React.Component {
+class WorldMap extends React.Component {
   constructor(props){
     super(props);
   }
@@ -25,19 +16,12 @@ class App extends React.Component {
   return (
     <div>
       <p>hello react</p>
-      <Paper  elevation={10}>
-        <Typography variant="headline" component="h3">
-          This is a sheet of paper.
-        </Typography>
-        <Typography component="p">
-          Paper can be used to build surface or other elements for your application.
-        </Typography>
-      </Paper>
-      <TEST/>
       <ZoomPan/>
     </div>
     );
   }
 }
 
-render (<App />, document.getElementById('root'));
+export default WorldMap;
+
+// render (<WorldMap />, document.getElementById('root'));
