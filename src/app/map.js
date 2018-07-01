@@ -210,7 +210,7 @@ class ZoomPan extends Component {
           hashHistory.push('/');
         }
         else{
-          console.log('res is ',response);
+          console.log('res is: ', response.data);
           self.setState({
             geo: response.data, 
             selectedValue: response.data.name,
@@ -319,4 +319,4 @@ class ZoomPan extends Component {
   }
 }
 
-export default ZoomPan
+export default ZoomPan;
