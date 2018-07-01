@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname ,'public')));
 
 var data = []
 var ids = []
-var obj = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
+var obj = JSON.parse(fs.readFileSync('./data_new.json', 'utf8'));
 for(var i = 0; i < obj.length; i++) {
   ids.push(obj[i]['cca3'])
   var flag = obj[i]['flag']
@@ -23,11 +23,12 @@ for(var i = 0; i < obj.length; i++) {
   var region = obj[i]['region']
   var latlng = obj[i]['latlng']
   var id = obj[i]['cca3']
+  var img = obj[i]['image']
   var tmp = {'flag': flag, 'name': name, 'capital': capital, 
-        'region': region, 'latlng': latlng, 'id': id};
+        'region': region, 'latlng': latlng, 'id': id, 'image': img};
   data.push(tmp)
 }
-app.get('/', (req, res) => {
+app.post('/getData', (req, res) => {
   console.log(req.body.id);
   var index = ids.indexOf(req.body.id)
   if(index == -1){
@@ -38,6 +39,10 @@ app.get('/', (req, res) => {
     res.send(data[index])
   }
 });
+
+app.get(['/', '/blog'], function(req, res) {
+    res.sendFile(path.join(__dirname, './public/blog.html'));
+})
 
 http.listen(port, function(err) {
   if (err) {
