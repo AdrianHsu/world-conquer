@@ -159,17 +159,20 @@ class ZoomPan extends Component {
       center: [0,20],
       zoom: 1,
       cities: [
-        { name: "Zurich", coordinates: [8.5417,47.3769] },
-        { name: "Singapore", coordinates: [103.8198,1.3521] },
-        { name: "San Francisco", coordinates: [-122.4194,37.7749] },
-        { name: "Sydney", coordinates: [151.2093,-33.8688] },
-        { name: "Lagos", coordinates: [3.3792,6.5244] },
-        { name: "Buenos Aires", coordinates: [-58.3816,-34.6037] },
-        { name: "Shanghai", coordinates: [121.4737,31.2304] },
-        { name: "Taiwan", coordinates: [121.2, 23.5] }
+        { name: "蘇黎世", coordinates: [8.5417,47.3769] },
+        { name: "新加坡", coordinates: [103.8198,1.3521] },
+        { name: "舊金山", coordinates: [-122.4194,37.7749] },
+        { name: "雪梨", coordinates: [151.2093,-33.8688] },
+        { name: "波士頓", coordinates: [-71.081797, 42.322620]},
+        { name: "布宜諾斯艾利斯", coordinates: [-58.3816,-34.6037] },
+        // { name: "上海", coordinates: [121.4737,31.2304] },
+        { name: "台灣", coordinates: [121.2, 23.5] },
+        { name: "喀布爾", coordinates: [69.0958, 34.3159]},
+        { name: "莫斯科", coordinates: [37.637191, 55.697636]},
+        { name: "開普敦", coordinates: [18.466378, -33.996285]},
       ],
       open:false,
-      selectedValue: 'Taiwan',
+      selectedValue: DefaultGeo.properties.name,
       geo: DefaultGeo,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
@@ -202,10 +205,6 @@ class ZoomPan extends Component {
       center: [0,20],
       zoom: 1,
     })
-  }
-  handleClick = geo => {
-    alert(geo.properties.name);
-    this.props.history.push('/sheet');
   }
   render() {
     return (
