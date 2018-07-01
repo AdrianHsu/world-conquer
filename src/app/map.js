@@ -1,5 +1,6 @@
 
 import React, { Component } from "react";
+import axios from 'axios';
 import SimpleDialogWrapped from './dialog.js';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -129,6 +130,19 @@ const wrapperStyles = {
   maxWidth: 980,
   margin: "0 auto",
 }
+const DefaultGeo2 =  {
+    "flag": "🇹🇼",
+    "name": "Taiwan",
+    "capital": [
+      "Taipei"
+    ],
+    "region": "Asia",
+    "latlng": [
+      23.5,
+      121
+    ],
+    "id": "TWN"
+}
 
 const countryStyles = {
     default: {
@@ -172,19 +186,41 @@ class ZoomPan extends Component {
         { name: "開普敦", coordinates: [18.466378, -33.996285]},
       ],
       open:false,
-      selectedValue: DefaultGeo.properties.name,
-      geo: DefaultGeo,
+      selectedValue: DefaultGeo2.name,
+      geo: DefaultGeo2,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
   }
 
   handleClickOpen = geo => {
-    this.setState({
-      open: true,
-      selectedValue: geo.properties.name,
-      geo: geo,
-    });
+    // this.setState({
+    //   open: true,
+    //   selectedValue: geo.properties.name,
+    //   geo: geo,
+    // });
+    var self = this;
+    axios.post('/getData', {
+        id: geo.id,
+      })
+      .then(function (response) {
+        console.log(response);
+        if(response.data === 'error'){
+          alert('error');
+          hashHistory.push('/');
+        }
+        else{
+          console.log('res is ',response);
+          self.setState({
+            geo: response.data, 
+            selectedValue: response.data.name,
+            open: true,
+          });
+        } 
+      })
+      .catch(function (error) {
+        console.log('error is ',error);
+      });      
     console.log(geo);
   };
 

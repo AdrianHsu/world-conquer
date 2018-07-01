@@ -25,12 +25,6 @@ const styles = {
 };
 
 class SimpleDialog extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      geo: this.props.geo,
-    }
-  }
   handleClose = () => {
     this.props.onClose(this.props.selectedValue);
   };
@@ -44,7 +38,7 @@ class SimpleDialog extends React.Component {
 
     return (
       <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
-        <DialogTitle id="simple-dialog-title">{this.props.geo.properties.name}</DialogTitle>
+        <DialogTitle id="simple-dialog-title">{this.props.geo.name}</DialogTitle>
         <div>
           <List>
             {emails.map(email => (
@@ -63,7 +57,7 @@ class SimpleDialog extends React.Component {
                   <AddIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary={this.props.geo.properties.name} />
+              <ListItemText primary={this.props.geo.name} />
             </ListItem>
           </List>
         </div>
