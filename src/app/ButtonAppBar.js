@@ -31,20 +31,34 @@ class ButtonAppBar extends React.Component {
   }
   loginButton = (e) => {
     if(this.props.username === '') {
-      return(
+      return(<div><Button variant="outlined" color="primary"
+      >
+      {"積分：" + this.props.score}
+     </Button> &nbsp;&nbsp;
+     <Button variant="outlined" color="secondary"
+      >
+      {this.props.title}
+     </Button>
         <Button onClick={e => this.redirectAuth(e)}>
         登入
-      </Button>);
+      </Button></div>);
     } else {
-      return(
+      return(<div><Button variant="outlined" color="primary"
+      >
+      {"積分：" + this.props.score}
+     </Button>&nbsp;&nbsp;
+        <Button variant="outlined" color="secondary"
+      >
+      {this.props.title}
+     </Button>
         <Button onClick={e => this.redirectAuth(e)}>
         登出
-      </Button>);
+      </Button></div>);
     }
   }
   titleBar = (classes) => {
     return (<Typography variant="title" color="inherit" className={classes.flex}>
-    歡迎回來，{this.props.username}！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your score: {this.props.score}
+    歡迎回來，{this.props.username}！
     </Typography>
     );
   }
