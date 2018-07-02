@@ -41,7 +41,7 @@ const DefaultGeo2 =  {
     "id": "TWN"
 }
 
-const mapColors= ['#FF0000', '#FFA500', '#FFFF00', '#7CFC00', 'ECEFF1']; //Red, Orange, Yellow, Green, Default
+const mapColors= ['#FF6984', '#FFC964', '#FFEE00', '#91D143', 'ECEFF1']; //Red, Orange, Yellow, Green, Default
 
 
 class ZoomPan extends Component {
@@ -51,6 +51,7 @@ class ZoomPan extends Component {
       username: 'None',
       center: [0,20],
       zoom: 1,
+      title: "初心者",
       cities: [
         { name: "蘇黎世", coordinates: [8.5417,47.3769] },
         { name: "新加坡", coordinates: [103.8198,1.3521] },
@@ -105,7 +106,20 @@ class ZoomPan extends Component {
       for(let j = 0; j < mycolor.length; ++j){
         score += 4-mycolor[j];
       }
-      this.setState({username: username, mycolor: mycolor, score: score});
+      
+      var title = "初心者";
+      if(score >= 3) {
+        title = "超級初心者"
+      } else if (score >= 10) {
+        title = "魔導士"
+      } else if (score >= 20) {
+        title = "大魔導士"
+      } else if (score >= 30) {
+        title = "卍罪 i 大魔導士卍"
+      } else if (score >= 50) {
+        title = "真＊土豪"
+      }
+      this.setState({username: username, mycolor: mycolor, score: score, title: title});
     })
     .catch(function (error) {
       console.log(error);
@@ -196,7 +210,8 @@ class ZoomPan extends Component {
       <div>
         <ButtonAppBar history={this.props.history} 
           username={this.state.username}
-          score = {this.state.score}>
+          score = {this.state.score}
+          title = {this.state.title}>
         </ButtonAppBar>
         <div style={wrapperStyles}>
           {
