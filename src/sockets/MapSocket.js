@@ -1,5 +1,5 @@
 
-const MapSchema = require('../models/map.js');
+const MapSchema = require('../models/Map.js');
 const mongoose = require('mongoose');
 
 var Map = null;

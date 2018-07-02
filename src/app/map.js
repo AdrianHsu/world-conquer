@@ -70,7 +70,7 @@ class ZoomPan extends Component {
       selectedCode: DefaultGeo2.id,
       geo: DefaultGeo2,
       color: mapColors[3],
-      mycolor: Array(241).fill("ECEFF1"),
+      mycolor: Array(241).fill(4),
       changeColor: false,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
@@ -134,7 +134,7 @@ class ZoomPan extends Component {
   statuscallback = index => {
     // console.log('map:', index);
     var mycolor = this.state.mycolor;
-    mycolor[this.state.originalno] = mapColors[index];
+    mycolor[this.state.originalno] = index;
     // console.log(this.state.selectedCode);
     // console.log(this.state.selectedValue);
     // console.log(index);
@@ -187,6 +187,7 @@ class ZoomPan extends Component {
           onClose={this.handleClose}
           geo = {this.state.geo}
           statuscallback = {this.statuscallback}
+          currentcolor = {this.state.mycolor[this.state.originalno]}
         />
         </div>
         <div style={wrapperStyles}>
@@ -213,7 +214,7 @@ class ZoomPan extends Component {
                     style={{
                         default: {
                           // fill: this.state.changeColor? 'FFFFFF' : popScale(geography.properties.pop_est),
-                          fill: this.state.mycolor[i],
+                          fill: mapColors[this.state.mycolor[i]],
                           stroke: "#607D8B",
                           strokeWidth: 0.75,
                           outline: "none",
