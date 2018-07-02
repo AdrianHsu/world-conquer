@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname ,'public')));
 var data = []
 var ids = []
 var obj = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
+console.log(obj.length);
 for(var i = 0; i < obj.length; i++) {
   ids.push(obj[i]['cca3'])
   var flag = obj[i]['flag']
@@ -24,7 +25,7 @@ for(var i = 0; i < obj.length; i++) {
   var latlng = obj[i]['latlng']
   var id = obj[i]['cca3']
   var img = obj[i]['image']
-  var tmp = {'flag': flag, 'name': name, 'capital': capital, 
+  var tmp = {'flag': flag, 'name': name, 'capital': capital,
         'region': region, 'latlng': latlng, 'id': id, 'image': img};
   data.push(tmp)
 }

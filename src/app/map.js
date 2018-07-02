@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import axios from 'axios';
 import SimpleDialogWrapped from './dialog.js';
 import Typography from '@material-ui/core/Typography';
-import chroma from "chroma-js"
 import { scaleLinear } from "d3-scale"
 
 import {
@@ -61,18 +60,21 @@ class ZoomPan extends Component {
         { name: "開普敦", coordinates: [18.466378, -33.996285]},
       ],
       open:false,
+      originalno: 0,
       selectedValue: DefaultGeo2.name,
       geo: DefaultGeo2,
       color: mapColors[3],
       mycolor: Array(241).fill("ECEFF1"),
       changeColor: false,
+      hasclose: false,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
     this.change = this.change.bind(this);
+    this.willexit = this.willexit.bind(this);
   }
 
-  handleClickOpen = geo => {
+  handleClickOpen = (geo, i) => {
     // this.setState({
     //   open: true,
     //   selectedValue: geo.properties.name,
@@ -91,10 +93,10 @@ class ZoomPan extends Component {
         else{
           console.log('res is: ', response.data);
           self.setState({
-            geo: response.data, 
+            geo: response.data,
+            originalno: i,
             selectedValue: response.data.name,
             open: true,
-            changeColor: true,
           });
         } 
       })
@@ -105,7 +107,8 @@ class ZoomPan extends Component {
   };
 
   handleClose = value => {
-    this.setState({ selectedValue: value, open: false });
+    this.setState({ selectedValue: value, open: false, hasclose: true });
+    console.log('close')
   };
   
   handleCitySelection(evt) {
@@ -114,25 +117,29 @@ class ZoomPan extends Component {
     this.setState({
       center: city.coordinates,
       zoom: 2,
-      changeColor: true,
     })
   }
   handleReset() {
     this.setState({
       center: [0,20],
       zoom: 1,
-      changeColor: false,
     })
   }
   statuscallback = index => {
     console.log('map:', index);
+    var mycolor = this.state.mycolor;
+    mycolor[this.state.originalno] = mapColors[index]
     this.setState({
       color: mapColors[index],
-      changeColor: false,
+      mycolor: mycolor,
     })
   }
   change(){
     this.setState({ changeColor: true });
+  }
+  willexit(){
+    console.log('exit');
+    // this.setState({hasclose: false})
   }
   render() {
     return (
@@ -166,6 +173,7 @@ class ZoomPan extends Component {
           onClose={this.handleClose}
           geo = {this.state.geo}
           statuscallback = {this.statuscallback}
+          willexit = {this.willexit}
         />
         </div>
         <div style={wrapperStyles}>
@@ -186,7 +194,7 @@ class ZoomPan extends Component {
                 {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
                   <Geography
                     key={i}
-                    onClick = {() => this.handleClickOpen(geography)}
+                    onClick = {() => this.handleClickOpen(geography, i)}
                     geography={geography}
                     projection={projection}
                     style={{
@@ -198,7 +206,7 @@ class ZoomPan extends Component {
                           outline: "none",
                         },
                         hover: {
-                          fill: "#607D8B",
+                          fill: this.state.hasclose? "ECEFF1" : "#607D8B",
                           stroke: "#607D8B",
                           strokeWidth: 0.75,
                           outline: "none",

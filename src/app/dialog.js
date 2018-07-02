@@ -77,6 +77,7 @@ class SimpleDialog extends React.Component {
         <Dialog
           open={this.props.open}
           onClose={this.handleClose}
+          onExit={this.props.willexit}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
