@@ -43,14 +43,14 @@ class SimpleDialog extends React.Component {
   handleClose = (discard) => {
     this.props.onClose(this.props.selectedValue);
     this.props.statuscallback(discard? this.props.currentcolor : this.state.index);
-    this.setState({ index: this.props.currentcolor })
+    // this.setState({ index: this.props.currentcolor })
   };
 
   handleListItemClick = value => {
     this.props.onClose(value);
   };
   statuscallback = index => {
-    // console.log('dialog:', index);
+    console.log('dialog:', index);
     this.setState({index: index});
   }
   fetchListItems = () => {
@@ -107,7 +107,7 @@ class SimpleDialog extends React.Component {
                 <List>
                     {listItems}
                 </List>
-                <SimpleListMenu statuscallback={this.statuscallback}/>
+                <SimpleListMenu statuscallback={this.statuscallback} currentcolor={this.props.currentcolor}/>
           </DialogContent>
           <DialogActions>
             <Button onClick={() => this.handleClose(true)} color="primary">

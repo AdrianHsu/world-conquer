@@ -44,7 +44,7 @@ class SimpleListMenu extends React.Component {
 
   state = {
     anchorEl: null,
-    selectedIndex: 4,
+    selectedIndex: this.props.currentcolor,
   };
 
   handleClickListItem = event => {

@@ -128,7 +128,8 @@ class ZoomPan extends Component {
           hashHistory.push('/');
         }
         else{
-          // console.log('res is: ', response.data);
+          console.log('res is: ', response.data);
+          var mycolor = self.mycolor;
           self.setState({
             geo: response.data,
             originalno: i,
@@ -165,7 +166,7 @@ class ZoomPan extends Component {
     })
   }
   statuscallback = index => {
-    // console.log('map:', index);
+    console.log('map:', index);
     var mycolor = this.state.mycolor;
     mycolor[this.state.originalno] = index;
     // console.log(this.state.selectedCode);
