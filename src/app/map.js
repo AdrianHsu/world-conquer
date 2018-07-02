@@ -78,6 +78,18 @@ class ZoomPan extends Component {
     this.change = this.change.bind(this);
   }
   componentDidMount(){
+    var retrievedObject = sessionStorage.getItem('userInfo');
+    if(retrievedObject == null) {
+      window.alert('你沒有登入哦！');
+      this.props.history.push('/login');
+    } else {
+      // window.alert(retrievedObject + '\n登入成功！');
+      // console.log(retrievedObject);
+      retrievedObject = JSON.parse(retrievedObject);
+      var username = retrievedObject.username;
+      document.title = "世界制霸 | " + username;
+    }
+
     axios.get('/load', {
       params: {
         username: this.state.username

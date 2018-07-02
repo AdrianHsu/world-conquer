@@ -6,9 +6,7 @@ var APP_DIR = path.resolve(__dirname, 'src/app');
 
 var config = {
   entry: {
-    // login: APP_DIR + '/index_login.js',
-    // signup: APP_DIR + '/index_signup.js',
-    blog: APP_DIR + '/index.js',
+    index: APP_DIR + '/index.js',
   }, 
   output: {
     path: BUILD_DIR,

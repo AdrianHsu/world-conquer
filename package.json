@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --watch --mode development",
     "build": "webpack -p",
-    "start": "./node_modules/.bin/babel data_server.js && nodemon data_server.js"
+    "start": "./node_modules/.bin/babel server.js && nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,9 @@
     "d3-scale": "^2.1.0",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "js-sha256": "^0.9.0",
     "mongoose": "^5.1.7",
+    "mongoose-unique-validator": "^2.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
