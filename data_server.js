@@ -56,6 +56,11 @@ app.put('/save', (req, res) => {
   mapSocket.putMaps(newData, res);
 })
 
+app.get('/load', function(req, res){
+  const username = req.query.username
+  mapSocket.loadMapList(username, res);
+});
+
 app.get(['/', '/blog'], function(req, res) {
     res.sendFile(path.join(__dirname, './public/blog.html'));
 })

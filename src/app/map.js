@@ -77,7 +77,20 @@ class ZoomPan extends Component {
     this.handleReset = this.handleReset.bind(this)
     this.change = this.change.bind(this);
   }
-
+  componentDidMount(){
+    axios.get('/load', {
+      params: {
+        username: this.state.username
+      }
+    })
+    .then( (res) => {
+      // console.log(res['data']);
+      console.log(res)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
   handleClickOpen = (geo, i) => {
     // this.setState({
     //   open: true,
