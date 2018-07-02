@@ -295,9 +295,9 @@ class ZoomPan extends Component {
                         cx={0}
                         cy={0}
                         r={6}
-                        // fill="#FF5722"
-                        fill = "A9A9A9"
-                        // stroke="#DF3702"
+                        fill="#FF5722"
+                        // fill = "A9A9A9"
+                        stroke="#DF3702"
                         // stroke = '607D8B'
                       />
                     </Marker>

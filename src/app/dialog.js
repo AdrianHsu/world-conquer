@@ -110,11 +110,11 @@ class SimpleDialog extends React.Component {
                 <SimpleListMenu statuscallback={this.statuscallback} currentcolor={this.props.currentcolor}/>
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => this.handleClose(true)} color="primary">
-              Disagree
+            <Button onClick={() => this.handleClose(true)} color="secondary">
+              取消
             </Button>
             <Button onClick={() => this.handleClose(false)} color="primary" autoFocus>
-              Agree
+              確定
             </Button>
           </DialogActions>
         </Dialog>
