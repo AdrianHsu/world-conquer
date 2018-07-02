@@ -72,6 +72,7 @@ class ZoomPan extends Component {
       color: mapColors[3],
       mycolor: Array(241).fill(4),
       changeColor: false,
+      score: 0,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
@@ -85,7 +86,15 @@ class ZoomPan extends Component {
     })
     .then( (res) => {
       // console.log(res['data']);
-      console.log(res)
+      var mycolor = this.state.mycolor;
+      var score = 0;
+      for(let i = 0; i < res.data.length; ++i){
+        mycolor[res.data[i].no] = parseInt(res.data[i].level);
+      }
+      for(let j = 0; j < mycolor.length; ++j){
+        score += 4-mycolor[j];
+      }
+      this.setState({mycolor: mycolor, score: score});
     })
     .catch(function (error) {
       console.log(error);
@@ -155,6 +164,7 @@ class ZoomPan extends Component {
       username: this.state.username,
       id: this.state.selectedCode,
       level: index,
+      no: this.state.originalno,
     })
     .then((res) => {
       console.log(res)
@@ -174,7 +184,8 @@ class ZoomPan extends Component {
     return (
       <div>
         <ButtonAppBar history={this.props.history} 
-          username={this.state.username}>
+          username={this.state.username}
+          score = {this.state.score}>
         </ButtonAppBar>
         <div style={wrapperStyles}>
           {

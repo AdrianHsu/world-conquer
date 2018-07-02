@@ -16,7 +16,8 @@ class MapSocket {
       var update = {
             username: data.username,
             id: data.id,
-            level: data.level
+            level: data.level,
+            no: data.no
         };
       var options = { upsert: true, new: true, setDefaultsOnInsert: true };
 
