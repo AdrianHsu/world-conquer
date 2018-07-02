@@ -70,8 +70,9 @@ class ZoomPan extends Component {
       selectedCode: DefaultGeo2.id,
       geo: DefaultGeo2,
       color: mapColors[3],
-      mycolor: Array(241).fill("ECEFF1"),
+      mycolor: Array(241).fill(4),
       changeColor: false,
+      score: 0,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
@@ -97,7 +98,15 @@ class ZoomPan extends Component {
     })
     .then( (res) => {
       // console.log(res['data']);
-      console.log(res)
+      var mycolor = this.state.mycolor;
+      var score = 0;
+      for(let i = 0; i < res.data.length; ++i){
+        mycolor[res.data[i].no] = parseInt(res.data[i].level);
+      }
+      for(let j = 0; j < mycolor.length; ++j){
+        score += 4-mycolor[j];
+      }
+      this.setState({mycolor: mycolor, score: score});
     })
     .catch(function (error) {
       console.log(error);
@@ -159,7 +168,7 @@ class ZoomPan extends Component {
   statuscallback = index => {
     // console.log('map:', index);
     var mycolor = this.state.mycolor;
-    mycolor[this.state.originalno] = mapColors[index];
+    mycolor[this.state.originalno] = index;
     // console.log(this.state.selectedCode);
     // console.log(this.state.selectedValue);
     // console.log(index);
@@ -167,6 +176,7 @@ class ZoomPan extends Component {
       username: this.state.username,
       id: this.state.selectedCode,
       level: index,
+      no: this.state.originalno,
     })
     .then((res) => {
       console.log(res)
@@ -186,7 +196,8 @@ class ZoomPan extends Component {
     return (
       <div>
         <ButtonAppBar history={this.props.history} 
-          username={this.state.username}>
+          username={this.state.username}
+          score = {this.state.score}>
         </ButtonAppBar>
         <div style={wrapperStyles}>
           {
@@ -212,6 +223,7 @@ class ZoomPan extends Component {
           onClose={this.handleClose}
           geo = {this.state.geo}
           statuscallback = {this.statuscallback}
+          currentcolor = {this.state.mycolor[this.state.originalno]}
         />
         </div>
         <div style={wrapperStyles}>
@@ -238,7 +250,7 @@ class ZoomPan extends Component {
                     style={{
                         default: {
                           // fill: this.state.changeColor? 'FFFFFF' : popScale(geography.properties.pop_est),
-                          fill: this.state.mycolor[i],
+                          fill: mapColors[this.state.mycolor[i]],
                           stroke: "#607D8B",
                           strokeWidth: 0.75,
                           outline: "none",

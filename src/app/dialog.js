@@ -36,14 +36,14 @@ class SimpleDialog extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      index: 4,
+      index: this.props.currentcolor,
     }
     this.handleClose.bind(this);
   }
   handleClose = (discard) => {
     this.props.onClose(this.props.selectedValue);
-    this.props.statuscallback(discard? 4 : this.state.index);
-    this.setState({ index: 4 })
+    this.props.statuscallback(discard? this.props.currentcolor : this.state.index);
+    this.setState({ index: this.props.currentcolor })
   };
 
   handleListItemClick = value => {

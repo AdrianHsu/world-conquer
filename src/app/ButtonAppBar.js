@@ -44,8 +44,9 @@ class ButtonAppBar extends React.Component {
   }
   titleBar = (classes) => {
     return (<Typography variant="title" color="inherit" className={classes.flex}>
-    歡迎回來，{this.props.username}！
-    </Typography>);
+    歡迎回來，{this.props.username}！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your score: {this.props.score}
+    </Typography>
+    );
   }
   render() {
     const { classes } = this.props;
