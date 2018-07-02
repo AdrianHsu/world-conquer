@@ -74,13 +74,15 @@ app.put('/save', (req, res) => {
   var newData = {
     username: req.body.username,
     id: req.body.id,
-    level: req.body.level
+    level: req.body.level,
+    no: req.body.no
   }
   mapSocket.putMaps(newData, res);
 })
 
 app.get('/load', function(req, res){
-  const username = req.query.username
+  const username = req.query.username;
+  // console.log(username);
   mapSocket.loadMapList(username, res);
 });
 

@@ -48,7 +48,7 @@ class ZoomPan extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'adrianhsu1995',
+      username: 'None',
       center: [0,20],
       zoom: 1,
       cities: [
@@ -83,17 +83,16 @@ class ZoomPan extends Component {
     if(retrievedObject == null) {
       window.alert('你沒有登入哦！');
       this.props.history.push('/login');
-    } else {
-      // window.alert(retrievedObject + '\n登入成功！');
-      // console.log(retrievedObject);
-      retrievedObject = JSON.parse(retrievedObject);
-      var username = retrievedObject.username;
-      document.title = "世界制霸 | " + username;
     }
-
+    // window.alert(retrievedObject + '\n登入成功！');
+    // console.log(retrievedObject);
+    retrievedObject = JSON.parse(retrievedObject);
+    var username = retrievedObject.username;
+    document.title = "世界制霸 | " + username;
+    // console.log(username);
     axios.get('/load', {
       params: {
-        username: this.state.username
+        username: username
       }
     })
     .then( (res) => {
@@ -106,7 +105,7 @@ class ZoomPan extends Component {
       for(let j = 0; j < mycolor.length; ++j){
         score += 4-mycolor[j];
       }
-      this.setState({mycolor: mycolor, score: score});
+      this.setState({username: username, mycolor: mycolor, score: score});
     })
     .catch(function (error) {
       console.log(error);
