@@ -33,6 +33,9 @@ const styles = {
 };
 
 class SimpleDialog extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   handleClose = () => {
     this.props.onClose(this.props.selectedValue);
   };
@@ -41,7 +44,7 @@ class SimpleDialog extends React.Component {
     this.props.onClose(value);
   };
   statuscallback = index => {
-    console.log('dialog:', index);
+    // console.log('dialog:', index);
     this.props.statuscallback(index);
   }
   fetchListItems = () => {

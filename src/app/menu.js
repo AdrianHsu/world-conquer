@@ -53,7 +53,7 @@ class SimpleListMenu extends React.Component {
 
   handleMenuItemClick = (event, index) => {
     this.setState({ selectedIndex: index, anchorEl: null });
-    console.log('menu:', index);
+    // console.log('menu:', index);
     this.props.statuscallback(index);
   };
 

@@ -4,7 +4,10 @@ const fs = require('fs');
 var http = require('http').Server(app);
 var path = require('path');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
+const con = mongoose.createConnection('mongodb://localhost/worlddb');
+const MapSocket = require('./src/sockets/MapSocket.js');
+const mapSocket = new MapSocket(con);
 const port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -40,6 +43,18 @@ app.post('/getData', (req, res) => {
     res.send(data[index])
   }
 });
+
+app.put('/save', (req, res) => {
+  // console.log(req.body.username);
+  // console.log(req.body.id);
+  // console.log(req.body.level);
+  var newData = {
+    username: req.body.username,
+    id: req.body.id,
+    level: req.body.level
+  }
+  mapSocket.putMaps(newData, res);
+})
 
 app.get(['/', '/blog'], function(req, res) {
     res.sendFile(path.join(__dirname, './public/blog.html'));

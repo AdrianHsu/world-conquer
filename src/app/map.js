@@ -48,7 +48,7 @@ class ZoomPan extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '水水',
+      username: 'adrianhsu1995',
       center: [0,20],
       zoom: 1,
       cities: [
@@ -67,6 +67,7 @@ class ZoomPan extends Component {
       open:false,
       originalno: 0,
       selectedValue: DefaultGeo2.name,
+      selectedCode: DefaultGeo2.id,
       geo: DefaultGeo2,
       color: mapColors[3],
       mycolor: Array(241).fill("ECEFF1"),
@@ -88,17 +89,18 @@ class ZoomPan extends Component {
         id: geo.properties.adm0_a3,
       })
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         if(response.data === 'error'){
           alert('error');
           hashHistory.push('/');
         }
         else{
-          console.log('res is: ', response.data);
+          // console.log('res is: ', response.data);
           self.setState({
             geo: response.data,
             originalno: i,
             selectedValue: response.data.name,
+            selectedCode: response.data.id,
             open: true,
           });
         } 
@@ -106,12 +108,12 @@ class ZoomPan extends Component {
       .catch(function (error) {
         console.log('error is ',error);
       });      
-    console.log(geo);
+    // console.log(geo);
   };
 
   handleClose = value => {
-    this.setState({ selectedValue: value, open: false});
-    console.log('close')
+    this.setState({ selectedValue: "", selectedCode: "", open: false});
+    // console.log('close')
   };
   
   handleCitySelection(i) {
@@ -130,9 +132,24 @@ class ZoomPan extends Component {
     })
   }
   statuscallback = index => {
-    console.log('map:', index);
+    // console.log('map:', index);
     var mycolor = this.state.mycolor;
-    mycolor[this.state.originalno] = mapColors[index]
+    mycolor[this.state.originalno] = mapColors[index];
+    console.log(this.state.selectedCode);
+    // console.log(this.state.selectedValue);
+    console.log(index);
+    axios.put('/save', {
+      username: this.state.username,
+      id: this.state.selectedCode,
+      level: index,
+    })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+    
     this.setState({
       color: mapColors[index],
       mycolor: mycolor,
