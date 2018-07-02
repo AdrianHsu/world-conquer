@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -74,10 +75,16 @@ class SimpleDialog extends React.Component {
     var listItems = this.fetchListItems();
     return (
       <div>
-        <Dialog
+        <Modal          
           open={this.props.open}
           onClose={this.handleClose}
-          onExit={this.props.willexit}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+          disableRestoreFocus
+        >
+        <Dialog          
+          open={this.props.open}
+          onClose={this.handleClose}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
@@ -102,6 +109,7 @@ class SimpleDialog extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
+        </Modal>
       </div>
     );
   }

@@ -66,12 +66,10 @@ class ZoomPan extends Component {
       color: mapColors[3],
       mycolor: Array(241).fill("ECEFF1"),
       changeColor: false,
-      hasclose: false,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
     this.change = this.change.bind(this);
-    this.willexit = this.willexit.bind(this);
   }
 
   handleClickOpen = (geo, i) => {
@@ -107,12 +105,13 @@ class ZoomPan extends Component {
   };
 
   handleClose = value => {
-    this.setState({ selectedValue: value, open: false, hasclose: true });
+    this.setState({ selectedValue: value, open: false});
     console.log('close')
   };
   
-  handleCitySelection(evt) {
-    const cityId = evt.target.getAttribute("data-city")
+  handleCitySelection(i) {
+    // const cityId = evt.target.getAttribute("data-city")
+    const cityId = i
     const city = this.state.cities[cityId]
     this.setState({
       center: city.coordinates,
@@ -137,10 +136,6 @@ class ZoomPan extends Component {
   change(){
     this.setState({ changeColor: true });
   }
-  willexit(){
-    console.log('exit');
-    // this.setState({hasclose: false})
-  }
   render() {
     return (
       <div>
@@ -150,14 +145,13 @@ class ZoomPan extends Component {
         <div style={wrapperStyles}>
           {
             this.state.cities.map((city, i) => (
-              <button
+              <Button
                 key={i}
                 className="btn px1"
-                data-city={i}
-                onClick={this.handleCitySelection}
+                onClick={() => this.handleCitySelection(i)}
                 >
                 { city.name }
-              </button>
+              </Button>
             ))
           }
           <button onClick={this.handleReset}>
@@ -173,7 +167,6 @@ class ZoomPan extends Component {
           onClose={this.handleClose}
           geo = {this.state.geo}
           statuscallback = {this.statuscallback}
-          willexit = {this.willexit}
         />
         </div>
         <div style={wrapperStyles}>
@@ -200,13 +193,13 @@ class ZoomPan extends Component {
                     style={{
                         default: {
                           // fill: this.state.changeColor? 'FFFFFF' : popScale(geography.properties.pop_est),
-                          fill: this.state.changeColor? 'FFFFFF' : this.state.mycolor[i],
+                          fill: this.state.mycolor[i],
                           stroke: "#607D8B",
                           strokeWidth: 0.75,
                           outline: "none",
                         },
                         hover: {
-                          fill: this.state.hasclose? "ECEFF1" : "#607D8B",
+                          fill: "#607D8B",
                           stroke: "#607D8B",
                           strokeWidth: 0.75,
                           outline: "none",
@@ -230,8 +223,10 @@ class ZoomPan extends Component {
                         cx={0}
                         cy={0}
                         r={6}
-                        fill="#FF5722"
-                        stroke="#DF3702"
+                        // fill="#FF5722"
+                        fill = "A9A9A9"
+                        // stroke="#DF3702"
+                        // stroke = '607D8B'
                       />
                     </Marker>
                   ))
