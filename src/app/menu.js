@@ -44,7 +44,7 @@ class SimpleListMenu extends React.Component {
 
   state = {
     anchorEl: null,
-    selectedIndex: 0,
+    selectedIndex: 4,
   };
 
   handleClickListItem = event => {

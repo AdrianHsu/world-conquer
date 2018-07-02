@@ -147,9 +147,6 @@ class ZoomPan extends Component {
         <ButtonAppBar history={this.props.history} 
           username={this.state.username}>
         </ButtonAppBar>
-        {/* <div>
-          <Button onClick={() => this.change()} color = 'primary'> change</Button> 
-        </div> */}
         <div style={wrapperStyles}>
           {
             this.state.cities.map((city, i) => (
@@ -168,8 +165,6 @@ class ZoomPan extends Component {
           </Button>
         </div>
         <div>
-        {/* <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography> */}
-        {/* <br />  */}
         <SimpleDialogWrapped
           selectedValue={this.state.selectedValue}
           open={this.state.open}
