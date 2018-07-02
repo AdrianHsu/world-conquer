@@ -4,6 +4,10 @@ import axios from 'axios';
 import SimpleDialogWrapped from './dialog.js';
 import Typography from '@material-ui/core/Typography';
 import { scaleLinear } from "d3-scale"
+import ButtonAppBar from './ButtonAppBar.js';
+import { Button } from "@material-ui/core";
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 
 import {
   ComposableMap,
@@ -13,7 +17,7 @@ import {
   Markers,
   Marker,
 } from "react-simple-maps"
-import { Button } from "@material-ui/core";
+
 const wrapperStyles = {
   width: "100%",
   maxWidth: 980,
@@ -41,9 +45,10 @@ const mapColors= ['#FF0000', '#FFA500', '#FFFF00', '#7CFC00', 'ECEFF1']; //Red, 
 
 
 class ZoomPan extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
+      username: '水水',
       center: [0,20],
       zoom: 1,
       cities: [
@@ -111,8 +116,8 @@ class ZoomPan extends Component {
     console.log('close')
   };
   
-  handleCitySelection(evt) {
-    const cityId = evt.target.getAttribute("data-city")
+  handleCitySelection(i) {
+    const cityId = i//evt.target.getAttribute("data-city")
     const city = this.state.cities[cityId]
     this.setState({
       center: city.coordinates,
@@ -144,29 +149,32 @@ class ZoomPan extends Component {
   render() {
     return (
       <div>
-        <div>
+        <ButtonAppBar history={this.props.history} 
+          username={this.state.username}>
+        </ButtonAppBar>
+        {/* <div>
           <Button onClick={() => this.change()} color = 'primary'> change</Button> 
-        </div>
+        </div> */}
         <div style={wrapperStyles}>
           {
             this.state.cities.map((city, i) => (
-              <button
+              <Button variant="outlined"
                 key={i}
                 className="btn px1"
-                data-city={i}
-                onClick={this.handleCitySelection}
+                onClick={() => this.handleCitySelection(i)}
+                style={{margin: 10}}
                 >
                 { city.name }
-              </button>
+              </Button>
             ))
           }
-          <button onClick={this.handleReset}>
+          <Button variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleReset}>
             { "Reset" }
-          </button>
+          </Button>
         </div>
         <div>
-        <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography>
-        <br />
+        {/* <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography> */}
+        {/* <br />  */}
         <SimpleDialogWrapped
           selectedValue={this.state.selectedValue}
           open={this.state.open}
@@ -245,4 +253,5 @@ class ZoomPan extends Component {
   }
 }
 
-export default ZoomPan;
+
+export default (ZoomPan);
