@@ -135,9 +135,9 @@ class ZoomPan extends Component {
     // console.log('map:', index);
     var mycolor = this.state.mycolor;
     mycolor[this.state.originalno] = mapColors[index];
-    console.log(this.state.selectedCode);
+    // console.log(this.state.selectedCode);
     // console.log(this.state.selectedValue);
-    console.log(index);
+    // console.log(index);
     axios.put('/save', {
       username: this.state.username,
       id: this.state.selectedCode,
@@ -149,7 +149,6 @@ class ZoomPan extends Component {
     .catch((err) => {
       console.log(err)
     })
-    
     this.setState({
       color: mapColors[index],
       mycolor: mycolor,
@@ -164,9 +163,6 @@ class ZoomPan extends Component {
         <ButtonAppBar history={this.props.history} 
           username={this.state.username}>
         </ButtonAppBar>
-        {/* <div>
-          <Button onClick={() => this.change()} color = 'primary'> change</Button> 
-        </div> */}
         <div style={wrapperStyles}>
           {
             this.state.cities.map((city, i) => (
@@ -185,8 +181,6 @@ class ZoomPan extends Component {
           </Button>
         </div>
         <div>
-        {/* <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography> */}
-        {/* <br />  */}
         <SimpleDialogWrapped
           selectedValue={this.state.selectedValue}
           open={this.state.open}

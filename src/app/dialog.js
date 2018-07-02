@@ -33,11 +33,17 @@ const styles = {
 };
 
 class SimpleDialog extends React.Component {
-  constructor(props) {
+  constructor(props){
     super(props);
+    this.state = {
+      index: 4,
+    }
+    this.handleClose.bind(this);
   }
-  handleClose = () => {
+  handleClose = (discard) => {
     this.props.onClose(this.props.selectedValue);
+    this.props.statuscallback(discard? 4 : this.state.index);
+    this.setState({ index: 4 })
   };
 
   handleListItemClick = value => {
@@ -45,7 +51,7 @@ class SimpleDialog extends React.Component {
   };
   statuscallback = index => {
     // console.log('dialog:', index);
-    this.props.statuscallback(index);
+    this.setState({index: index});
   }
   fetchListItems = () => {
     return (
@@ -80,14 +86,14 @@ class SimpleDialog extends React.Component {
       <div>
         <Modal          
           open={this.props.open}
-          onClose={this.handleClose}
+          onClose={() => this.handleClose(false)}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
           disableRestoreFocus
         >
         <Dialog          
           open={this.props.open}
-          onClose={this.handleClose}
+          onClose={() => this.handleClose(false)}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
@@ -104,10 +110,10 @@ class SimpleDialog extends React.Component {
                 <SimpleListMenu statuscallback={this.statuscallback}/>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={() => this.handleClose(true)} color="primary">
               Disagree
             </Button>
-            <Button onClick={this.handleClose} color="primary" autoFocus>
+            <Button onClick={() => this.handleClose(false)} color="primary" autoFocus>
               Agree
             </Button>
           </DialogActions>
