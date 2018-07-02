@@ -1,5 +1,5 @@
 
-const MapSchema = require('../models/map.js');
+const MapSchema = require('../models/Map.js');
 const mongoose = require('mongoose');
 
 var Map = null;
@@ -12,7 +12,7 @@ class MapSocket {
   putMaps(data, res) {
       // console.log(data);
       
-      var query = {username: data.username};
+      var query = {username: data.username, id: data.id};
       var update = {
             username: data.username,
             id: data.id,
@@ -33,19 +33,19 @@ class MapSocket {
         });
   };
 
-  // loadMapList(host, res) {
+  loadMapList(username, res) {
 
-  //   Map.find({author: host}, function(error, maps) {
+    Map.find({username: username}, function(error, maps) {
         
-  //       if (error) {
-  //           console.log(error);
-  //           res.send(error);
-  //           return;
-  //       } else {
-  //           // console.log(maps);
-  //           res.send(maps);
-  //       }
-  //   });
-  //   }
+        if (error) {
+            console.log(error);
+            res.send(error);
+            return;
+        } else {
+            // console.log(maps);
+            res.send(maps);
+        }
+    });
+    }
 }
 module.exports = MapSocket;
