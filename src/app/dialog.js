@@ -37,17 +37,18 @@ class SimpleDialog extends React.Component {
     super(props);
     this.state = {
       index: this.props.currentcolor,
+      discard: false,
     }
     this.handleClose.bind(this);
+    this.onEnter.bind(this);
   }
+  // componentDidMount() {
+  //   this.setState({ index: this.props.currentcolor });
+  // }
   handleClose = (discard) => {
     this.props.onClose(this.props.selectedValue);
     this.props.statuscallback(discard? this.props.currentcolor : this.state.index);
     // this.setState({ index: this.props.currentcolor })
-  };
-
-  handleListItemClick = value => {
-    this.props.onClose(value);
   };
   statuscallback = index => {
     console.log('dialog:', index);
@@ -78,7 +79,9 @@ class SimpleDialog extends React.Component {
       />
     </div>);
   }
-
+  onEnter() {
+    this.setState({ index: this.props.currentcolor });
+  }
   render() {
     const { classes, onClose, selectedValue, ...other } = this.props;
     var listItems = this.fetchListItems();
@@ -94,6 +97,7 @@ class SimpleDialog extends React.Component {
         <Dialog          
           open={this.props.open}
           onClose={() => this.handleClose(false)}
+          onEnter={() => this.onEnter()}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >

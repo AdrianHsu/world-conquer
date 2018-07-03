@@ -74,10 +74,10 @@ class ZoomPan extends Component {
       mycolor: Array(241).fill(4),
       changeColor: false,
       score: 0,
+      currentcolor: 4,
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
-    this.change = this.change.bind(this);
   }
   componentDidMount(){
     var retrievedObject = sessionStorage.getItem('userInfo');
@@ -126,11 +126,7 @@ class ZoomPan extends Component {
     });
   }
   handleClickOpen = (geo, i) => {
-    // this.setState({
-    //   open: true,
-    //   selectedValue: geo.properties.name,
-    //   geo: geo,
-    // });
+    console.log('click');
     var self = this;
     axios.post('/getData', {
         id: geo.properties.adm0_a3,
@@ -143,12 +139,13 @@ class ZoomPan extends Component {
         }
         else{
           console.log('res is: ', response.data);
-          var mycolor = self.mycolor;
+          var currentcolor = self.state.mycolor[i];
           self.setState({
             geo: response.data,
             originalno: i,
             selectedValue: response.data.name,
             selectedCode: response.data.id,
+            currentcolor: currentcolor,
             open: true,
           });
         } 
@@ -161,7 +158,6 @@ class ZoomPan extends Component {
 
   handleClose = value => {
     this.setState({ selectedValue: "", selectedCode: "", open: false});
-    // console.log('close')
   };
   
   handleCitySelection(i) {
@@ -183,6 +179,7 @@ class ZoomPan extends Component {
     console.log('map:', index);
     var mycolor = this.state.mycolor;
     mycolor[this.state.originalno] = index;
+    var score = this.state.score + ((4-index) - (4-this.state.currentcolor));
     // console.log(this.state.selectedCode);
     // console.log(this.state.selectedValue);
     // console.log(index);
@@ -201,10 +198,11 @@ class ZoomPan extends Component {
     this.setState({
       color: mapColors[index],
       mycolor: mycolor,
+      score: score,
     })
   }
-  change(){
-    this.setState({ changeColor: true });
+  onenter () {
+    console.log('will enter')
   }
   render() {
     return (
@@ -236,9 +234,10 @@ class ZoomPan extends Component {
           selectedValue={this.state.selectedValue}
           open={this.state.open}
           onClose={this.handleClose}
+          onenter={this.onenter}
           geo = {this.state.geo}
           statuscallback = {this.statuscallback}
-          currentcolor = {this.state.mycolor[this.state.originalno]}
+          currentcolor = {this.state.currentcolor}
         />
         </div>
         <div style={wrapperStyles}>
@@ -264,7 +263,6 @@ class ZoomPan extends Component {
                     projection={projection}
                     style={{
                         default: {
-                          // fill: this.state.changeColor? 'FFFFFF' : popScale(geography.properties.pop_est),
                           fill: mapColors[this.state.mycolor[i]],
                           stroke: "#607D8B",
                           strokeWidth: 0.75,
