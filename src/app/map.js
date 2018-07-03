@@ -83,6 +83,7 @@ class ZoomPan extends Component {
     if(retrievedObject == null) {
       window.alert('你沒有登入哦！');
       this.props.history.push('/login');
+      return 0;
     }
     // window.alert(retrievedObject + '\n登入成功！');
     // console.log(retrievedObject);
