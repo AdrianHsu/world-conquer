@@ -6,8 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import { scaleLinear } from "d3-scale"
 import ButtonAppBar from './ButtonAppBar.js';
 import { Button } from "@material-ui/core";
+import html2canvas from 'html2canvas';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import FileSaver from 'file-saver';
 
 import {
   ComposableMap,
@@ -23,9 +25,6 @@ const wrapperStyles = {
   maxWidth: 980,
   margin: "0 auto",
 }
-const popScale = scaleLinear()
-  .domain([0,100000000,1400000000])
-  .range(["#CFD8DC","#607D8B","#37474F"])
 
 const DefaultGeo2 =  {
     "flag": "🇹🇼",
@@ -78,6 +77,7 @@ class ZoomPan extends Component {
     }
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
+    this.screenshot = this.screenshot.bind(this)
   }
   componentDidMount(){
     var retrievedObject = sessionStorage.getItem('userInfo');
@@ -204,6 +204,15 @@ class ZoomPan extends Component {
   onenter () {
     console.log('will enter')
   }
+  screenshot () {
+    html2canvas(document.getElementById('map'))
+      .then(function(canvas) {
+        canvas.toBlob(function(blob) {
+          FileSaver.saveAs(blob, "World-Conquer.jpg");
+        },'image/jpeg', 1);    
+      }
+    );
+  }
   render() {
     return (
       <div>
@@ -228,6 +237,9 @@ class ZoomPan extends Component {
           <Button variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleReset}>
             { "Reset" }
           </Button>
+          <Button variant="outlined" color="primary" style={{margin: 10}} onClick={this.screenshot}>
+            { "ScreenShot" }
+          </Button>
         </div>
         <div>
         <SimpleDialogWrapped
@@ -240,7 +252,7 @@ class ZoomPan extends Component {
           currentcolor = {this.state.currentcolor}
         />
         </div>
-        <div style={wrapperStyles}>
+        <div style={wrapperStyles} id="map">
           <ComposableMap
             projectionConfig={{
               scale: 205,
