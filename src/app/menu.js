@@ -32,11 +32,11 @@ const icons = [
   ]
   
 const options = [
-  {title: 'I live in this country', icon: icons[0]},
-  {title: 'I have visited this country', icon: icons[1]}, 
-  {title: 'I have transfered in this country', icon: icons[2]}, 
-  {title: 'I would like to visit this country', icon: icons[3]},
-  {title: 'None', icon: icons[4]}
+  {title: '4: I live in this country', icon: icons[0]},
+  {title: '3: I have visited this country', icon: icons[1]}, 
+  {title: '2: I have transfered in this country', icon: icons[2]}, 
+  {title: '1: I would like to visit this country', icon: icons[3]},
+  {title: '0: None', icon: icons[4]}
 ];
 
 class SimpleListMenu extends React.Component {
@@ -72,11 +72,11 @@ class SimpleListMenu extends React.Component {
             button
             aria-haspopup="true"
             aria-controls="lock-menu"
-            aria-label="Please choose your level"
+            aria-label="Choose your level"
             onClick={this.handleClickListItem}
           >
             <ListItemText
-              primary="Please choose your level"
+              primary="Choose your level"
               secondary={options[this.state.selectedIndex].title}
             />
           </ListItem>
