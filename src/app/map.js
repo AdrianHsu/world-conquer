@@ -58,7 +58,6 @@ class ZoomPan extends Component {
         { name: "雪梨", coordinates: [151.2093,-33.8688] },
         { name: "波士頓", coordinates: [-71.081797, 42.322620]},
         { name: "布宜諾斯艾利斯", coordinates: [-58.3816,-34.6037] },
-        // { name: "上海", coordinates: [121.4737,31.2304] },
         { name: "台灣", coordinates: [121.2, 23.5] },
         { name: "喀布爾", coordinates: [69.0958, 34.3159]},
         { name: "莫斯科", coordinates: [37.637191, 55.697636]},
@@ -107,23 +106,41 @@ class ZoomPan extends Component {
         score += 4-mycolor[j];
       }
       
-      var title = "初心者";
-      if(score >= 3) {
-        title = "超級初心者"
-      } else if (score >= 10) {
-        title = "魔導士"
-      } else if (score >= 20) {
-        title = "大魔導士"
-      } else if (score >= 30) {
-        title = "卍罪 i 大魔導士卍"
-      } else if (score >= 50) {
-        title = "真＊土豪"
-      }
+      // var title = "初心者";
+      // if(score >= 3) {
+      //   title = "超級初心者"
+      // } else if (score >= 10) {
+      //   title = "魔導士"
+      // } else if (score >= 20) {
+      //   title = "大魔導士"
+      // } else if (score >= 30) {
+      //   title = "卍罪 i 大魔導士卍"
+      // } else if (score >= 50) {
+      //   title = "真＊土豪"
+      // }
+      var title = this.setTitle(score);
       this.setState({username: username, mycolor: mycolor, score: score, title: title});
     })
     .catch(function (error) {
       console.log(error);
     });
+  }
+  setTitle(score){
+    var title;
+    if(score >= 50){
+      title = "真＊土豪"      
+    } else if (score >= 30) {
+      title = "卍罪 i 大魔導士卍"
+    } else if (score >= 20) {
+      title = "大魔導士"
+    } else if (score >= 10) {
+      title = "魔導士"
+    } else if (socre >= 3) {
+      title = "超級初心者"
+    } else {
+      title = "初心者";
+    }
+    return title;
   }
   handleClickOpen = (geo, i) => {
     console.log('click');
@@ -180,6 +197,7 @@ class ZoomPan extends Component {
     var mycolor = this.state.mycolor;
     mycolor[this.state.originalno] = index;
     var score = this.state.score + ((4-index) - (4-this.state.currentcolor));
+    var title = this.setTitle(this.state.score + ((4-index) - (4-this.state.currentcolor)));
     // console.log(this.state.selectedCode);
     // console.log(this.state.selectedValue);
     // console.log(index);
@@ -199,6 +217,7 @@ class ZoomPan extends Component {
       color: mapColors[index],
       mycolor: mycolor,
       score: score,
+      title: title,
     })
   }
   onenter () {
@@ -208,7 +227,7 @@ class ZoomPan extends Component {
     html2canvas(document.getElementById('map'))
       .then(function(canvas) {
         canvas.toBlob(function(blob) {
-          FileSaver.saveAs(blob, "World-Conquer.jpg");
+          FileSaver.saveAs(blob, "World-Conquer" + ".jpg");
         },'image/jpeg', 1);    
       }
     );
@@ -304,11 +323,9 @@ class ZoomPan extends Component {
                       <circle
                         cx={0}
                         cy={0}
-                        r={6}
+                        r={4.5}
                         fill="#FF5722"
-                        // fill = "A9A9A9"
                         stroke="#DF3702"
-                        // stroke = '607D8B'
                       />
                     </Marker>
                   ))
