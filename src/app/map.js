@@ -320,14 +320,50 @@ class ZoomPan extends Component {
               <Markers>
                 {
                   this.state.cities.map((city, i) => (
-                    <Marker key={i} marker={city}>
-                      <circle
+                    <Marker key={i} marker={city}
+                    style={{
+                      default: { stroke: "#455A64" },
+                      hover: { stroke: "#FF5722" },
+                      pressed: { stroke: "#FF5722" },
+                      }}
+                    >
+                      {/* <circle
                         cx={0}
                         cy={0}
                         r={4.5}
                         fill="#FF5722"
                         stroke="#DF3702"
+                      /> */}
+                    <g transform="translate(-12, -24)">
+                      <path
+                        fill="none"
+                        strokeWidth="2"
+                        strokeLinecap="square"
+                        strokeMiterlimit="10"
+                        strokeLinejoin="miter"
+                        d="M20,9c0,4.9-8,13-8,13S4,13.9,4,9c0-5.1,4.1-8,8-8S20,3.9,20,9z"
                       />
+                      <circle
+                        fill="none"
+                        strokeWidth="2"
+                        strokeLinecap="square"
+                        strokeMiterlimit="10"
+                        strokeLinejoin="miter"
+                        cx="12"
+                        cy="9"
+                        r="3"
+                      />
+                    </g>
+                    <text
+                      textAnchor="middle"
+                      y={-30}
+                      style={{
+                        fontFamily: "Roboto, sans-serif",
+                        fill: "#1d3030",
+                        stroke: "none",
+                      }}
+                    >
+                    </text>
                     </Marker>
                   ))
                 }

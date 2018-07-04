@@ -75,7 +75,7 @@ class SimpleDialog extends React.Component {
       />
       <InsetListItem
         key="lat"
-        title={"經緯度：" + this.props.geo.latlng}
+        title={"經緯度：" + this.props.geo.latlng[1] + ", " + this.props.geo.latlng[0]}
       />
     </div>);
   }
