@@ -27,7 +27,7 @@
 ```
 $ mongod
 $ npm install 
-$ npm run dev
+$ npm run build
 $ npm start 
 
 # demo page: http://localhost:8080/

@@ -77,6 +77,7 @@ class ZoomPan extends Component {
     this.handleCitySelection = this.handleCitySelection.bind(this)
     this.handleReset = this.handleReset.bind(this)
     this.screenshot = this.screenshot.bind(this)
+    this.setTitle = this.setTitle.bind(this)
   }
   componentDidMount(){
     var retrievedObject = sessionStorage.getItem('userInfo');
@@ -136,7 +137,7 @@ class ZoomPan extends Component {
       title = "大魔導士"
     } else if (score >= 10) {
       title = "魔導士"
-    } else if (socre >= 3) {
+    } else if (score >= 3) {
       title = "超級初心者"
     } else {
       title = "初心者";
