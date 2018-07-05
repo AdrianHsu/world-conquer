@@ -19,12 +19,14 @@
 
 ### Demo
 
+https://beautiful-yosemite-17715.herokuapp.com/
 ![](img/demo.gif)
 
 
-## How-to
+## How-to(in local)
 
 ```
+clone the repo
 $ mongod
 $ npm install 
 $ npm run build
@@ -103,6 +105,8 @@ MIT License
   - [Material UI](https://material-ui-next.com/)
   - [Reacct Simple Maps](https://www.react-simple-maps.io/)
 
+## Known bugss
+1. A few countries in Africa are not in our database
 
 ## To-do
 
@@ -110,3 +114,4 @@ MIT License
 2. Connect with Facebook, Google, Twitter...etc
 3. Set more marks on map
 4. Comment feature
+
