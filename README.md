@@ -19,7 +19,9 @@
 
 ### Demo
 
+#### Website
 https://beautiful-yosemite-17715.herokuapp.com/
+#### GIF
 ![](img/demo.gif)
 
 
